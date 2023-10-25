@@ -29,11 +29,20 @@ public class CurddemoApplication {
 
 			// updateStudent(studentDAO);
 
-			deleteStudent(studentDAO);
+			// deleteStudent(studentDAO);
+
+			deleteAllStudent(studentDAO);
 
 		};
 
 		}
+
+	private void deleteAllStudent(StudentDAO studentDAO) {
+
+		System.out.println("deleting all students");
+		int numRowsDeleted = studentDAO.deleteAll();
+		System.out.println("deleted row count: "+ numRowsDeleted);
+	}
 
 	private void deleteStudent(StudentDAO studentDAO) {
 
