@@ -27,10 +27,20 @@ public class CurddemoApplication {
 
 			// queryForStudents(studentDAO);
 
-			updateStudent(studentDAO);
+			// updateStudent(studentDAO);
+
+			deleteStudent(studentDAO);
+
 		};
 
 		}
+
+	private void deleteStudent(StudentDAO studentDAO) {
+
+		int studentId =3;
+		System.out.println(" deleting student id: "+ studentId);
+		studentDAO.delete(studentId);
+	}
 
 	private void updateStudent(StudentDAO studentDAO) {
 		// retrive student based on the id: primary key
