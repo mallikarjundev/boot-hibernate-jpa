@@ -25,10 +25,30 @@ public class CurddemoApplication {
 
 			// readStudent(studentDAO);
 
-			queryForStudents(studentDAO);
+			// queryForStudents(studentDAO);
+
+			updateStudent(studentDAO);
 		};
 
 		}
+
+	private void updateStudent(StudentDAO studentDAO) {
+		// retrive student based on the id: primary key
+		int studentId = 1;
+		System.out.println("Getting student with id: "+ studentId);
+		Student myStudent = studentDAO.findById(studentId);
+
+		//change first name to"scoby"
+		System.out.println("updating student...");
+		myStudent.setFirstName("scoby");
+
+		//update the student
+		studentDAO.update(myStudent);
+
+		// display the updated student
+		System.out.println("updated: "+myStudent);
+
+	}
 
 	private void queryForStudents(StudentDAO studentDAO) {
 
